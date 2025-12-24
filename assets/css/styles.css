@@ -1,7 +1,21 @@
 :root{
-  --bg:#070c10;
-  --panel:#0b1116;
-  --panel2:#0f1922;
+  /* BG Body */
+  /* original */
+   --bg:#070c10; 
+   /* niveau de gris */
+  --grey:#4f5159;
+  --violet:#2b2963;
+   /* variante 1 */
+   /* --bg:#e5f42e; */
+   /* variante 2 */
+   /* --bg:#c8d43f; */
+   /* variante 3 */
+  /* --bg:#9ba24a; */
+   /* variante 4 */
+   /* --bg:#777b53; */
+  --btn-accent:#e5f42e;
+  --panel:#0b1116; 
+  --panel2:#0f1922; 
   --text:#e8eef5;
   --muted:#b3c1cf;
   --soft:#93a5b5;
@@ -12,7 +26,7 @@
   --shadow: 0 12px 40px rgba(0,0,0,.35);
   --radius: 18px;
   --radius2: 26px;
-  --max: 1120px;
+  --max: 1200px;
 }
 
 *{box-sizing:border-box}
@@ -27,8 +41,19 @@ body{
   line-height:1.55;
 }
 
+.body2{
+  background: radial-gradient(1200px 700px at 20% -10%, rgba(124,243,211,.16), transparent 60%),
+              radial-gradient(900px 600px at 100% 0%, rgba(122,167,255,.14), transparent 55%),
+              linear-gradient(180deg, var(--grey), #05080b 70%);
+}
+
+.body3{
+  background: radial-gradient(1200px 700px at 20% -10%, rgba(124,243,211,.16), transparent 60%),
+              radial-gradient(900px 600px at 100% 0%, rgba(122,167,255,.14), transparent 55%),
+              linear-gradient(180deg, var(--bg), #05080b 70%);
+}
 a{color:inherit; text-decoration: none}
-a:hover{color:var(--accent)}
+a:hover{color:var(--btn-accent)}
 img{max-width:100%; display:block}
 .container{max-width:var(--max); margin:0 auto; padding:0 18px}
 .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0}
@@ -115,7 +140,7 @@ img{max-width:100%; display:block}
   color:var(--text);
   transition: transform .15s ease, border-color .15s ease, background .15s ease;
 }
-.btn:hover{transform: translateY(-1px); border-color: rgba(124,243,211,.38)}
+.btn:hover{transform: translateY(-1px); border-color: var(--btn-accent)}
 .btn:active{transform: translateY(0)}
 .btn--primary{
   border-color: rgba(124,243,211,.35);
@@ -124,6 +149,7 @@ img{max-width:100%; display:block}
 .btn--ghost{background: transparent}
 .btn--small{padding:10px 12px; border-radius: 14px; font-size:.95rem}
 
+/* Background pattern */
 .hero{
   position:relative;
   padding: 56px 0 26px;
@@ -155,6 +181,101 @@ img{max-width:100%; display:block}
   line-height: 1.05;
   letter-spacing: -.5px;
   margin: 14px 0 12px;
+}
+/* Text effect */
+.accent{
+    color: var(--c-text);
+    text-shadow: 0 0 22px rgba(46, 230, 255, .10), 0 0 34px rgba(155, 162, 74, .12);
+    background: linear-gradient(
+      90deg,
+       rgba(200186, 215, 57, 1) 0%,
+       rgba(200186, 215, 57, .9) 25%,
+       rgba(200186, 215, 57, .4) 60%,
+         var(--text) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* test reveal text */
+.accent-reveal-wipe{
+  display: inline-block;
+  opacity: 0;
+  clip-path: inset(0 100% 0 0);   /* cache tout sauf rien à gauche */
+  animation: textWipe 3000ms cubic-bezier(.2,.8,.2,1) forwards;
+  animation-delay: 120ms;
+  will-change: clip-path, opacity;
+}
+
+ @keyframes textWipe{ 
+  0%{
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+  }
+  40%{
+    opacity: 1;                   /* le texte “apparaît” tôt */
+  }
+  100%{
+    opacity: 1;
+    clip-path: inset(0 0 0 0);    /* tout visible */
+  }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .accent-reveal-wipe{
+    animation: none;
+    opacity: 1;
+    clip-path: none;
+  }
+}
+
+/* Text effect 2 */
+.accent2{
+    color: var(--c-text);
+    text-shadow: 0 0 22px rgba(46, 230, 255, .10), 0 0 34px rgba(155, 162, 74, .12);
+    background: linear-gradient(
+      90deg,
+       rgba(229, 244, 46, 1) 0%,
+       rgba(229, 244, 46, .9) 25%,
+       rgba(229, 244, 46, .4) 60%,
+         var(--text) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* test reveal text 2 */
+.accent-reveal-wipe2{
+  display: inline-block;
+  opacity: 0;
+  clip-path: inset(0 100% 0 0);   /* cache tout sauf rien à gauche */
+  animation: textWipe 3000ms cubic-bezier(.2,.8,.2,1) forwards;
+  animation-delay: 120ms;
+  will-change: clip-path, opacity;
+}
+
+ @keyframes textWipe{ 
+  0%{
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+  }
+  40%{
+    opacity: 1;                   /* le texte “apparaît” tôt */
+  }
+  100%{
+    opacity: 1;
+    clip-path: inset(0 0 0 0);    /* tout visible */
+  }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .accent-reveal-wipe2{
+    animation: none;
+    opacity: 1;
+    clip-path: none;
+  }
 }
 .lead{color:var(--muted); font-size: clamp(1.02rem, 1.2vw, 1.14rem); max-width: 60ch}
 .hero__cta{display:flex;justify-content: center; gap:12px; flex-wrap:wrap; margin-top:18px}
