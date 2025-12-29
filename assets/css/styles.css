@@ -124,6 +124,7 @@ img{max-width:100%; display:block}
   border-color: rgba(124,243,211,.35);
   background: linear-gradient(135deg, rgba(124,243,211,.18), rgba(122,167,255,.16));
 }
+.btn_call2{margin: 0 auto}
 /* .btn--ghost{background: transparent} */
 /* .btn--small{padding:10px 12px; border-radius: 14px; font-size:.95rem} */
 
@@ -238,7 +239,7 @@ img{max-width:100%; display:block}
 .section{padding: 34px 0}
 .section--tight{padding: 22px 0}
 .section__head{display:flex; justify-content:space-between; align-items:flex-end; gap:12px; margin-bottom:16px}
-.h2, .h3{font-size: clamp(1.35rem, 2.0vw, 1.9rem); margin:0; color: var(--btn-accent)}
+.h2, .h3{font-size: clamp(1.35rem, 2.0vw, 1.9rem); margin:0; color: var(--btn-accent); text-align: center;}
 .muted{color:var(--muted)}
 .grid{
   display:grid;
@@ -257,7 +258,7 @@ img{max-width:100%; display:block}
 }
 .card h3{margin:10px; font-size:1.05rem}
 .card p{margin:0; color:var(--muted)}
-.card .meta{margin-top:12px; color:var(--soft); font-size:.95rem}
+.card .meta{margin-top:12px; color:var(--soft); font-size:.95rem; display: flex;}
 
 .pillars {
   display:grid; gap:14px;
@@ -420,11 +421,11 @@ textarea{min-height:120px; resize:vertical}
 .kpi .badge{background: rgba(11,17,22,.55)}
 .small{font-size:.95rem; color:var(--muted); text-align: center;}
 
-.reveal{opacity:0; transform: translateY(10px); transition: opacity .55s ease, transform .55s ease; }
+.reveal{opacity:0; transform: translateY(10px); transition: opacity .55s ease, transform .55s ease; display:flex; justify-content: center; flex-direction: column; }
 .reveal.is-visible, .faq .reveal{opacity:1; transform: translateY(0)}
-.img-services{border: 5px solid var(--btn-accent); /*border-radius: 20px*/ border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;margin: 0 auto;}
-.img-services2{border: 5px solid var(--btn-accent); border-radius: 20px;margin: 10px 10px 20px 10px;}
-.img-services3{border: 5px solid var(--btn-accent); border-radius: 30px;margin: 10px 10px 20px 10px;}
+.img-services{border: 5px solid var(--btn-accent); border-radius: 20px; margin: 0 auto;}
+/* .img-services2{border: 5px solid var(--btn-accent); border-radius: 20px;margin: 10px 10px 20px 10px;} */
+/* .img-services3{border: 5px solid var(--btn-accent); border-radius: 30px;margin: 10px 10px 20px 10px;} */
 .btn_option{display: flex;justify-content: center;flex-direction: column;}
 .card summary{
   cursor:pointer;
