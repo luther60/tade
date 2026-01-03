@@ -15,16 +15,15 @@
 
 </head>
 <body>
-  <a class="skip-link" href="#contenu">Aller au contenu</a>
 
 <header class="site-header" data-elevate>
   <div class="container header__inner">
     <a class="brand" href="index.html" aria-label="TADE - Accueil">
       <span class="brand__mark" aria-hidden="true"></span>
-      <span class="brand__name">TADE</span>
+      <span class="brand__name">T.A.D.E</span>
       <span class="brand__tag">Technologie • Automatisme • Domotique • Électricité</span>
     </a>
-
+    <!-- Toggle mobile -->
     <button class="nav__toggle" aria-controls="nav" aria-expanded="false">
       <span class="sr-only">Ouvrir le menu</span>
       <span class="burger" aria-hidden="true"></span>
@@ -33,11 +32,8 @@
     <nav id="nav" class="nav" aria-label="Navigation principale">
       <a class="nav__link" href="services.html">Services</a>
       <a class="nav__link" href="realisations.html">Réalisations</a>
-      <a class="nav__link" href="zones.html">Zones</a>
       <a class="nav__link" href="boutique.html">Boutique pro</a>
-      <a class="nav__link" href="recrutement.html">Recrutement</a>
       <a class="nav__link is-active" href="contact.html">Contact</a>
-      <a class="btn btn--small btn--ghost" href="tel:0300000000">Appeler</a>
     </nav>
   </div>
 </header>
@@ -46,16 +42,12 @@
 
 <section class="hero">
   <div class="container">
-    <div class="breadcrumb"><a href="index.html">Accueil</a> <span>›</span> <span>Contact</span></div>
+    <div class="breadcrumb"><a href="index.html">Accueil</a> <span>&gt;</span> <span>Contact</span></div>
     <div class="kicker"><i></i> Contact • Devis filtré • Réponse 24/48h</div>
     <h1 class="h1"><span class="accent accent-reveal-wipe">Contact rapide, demande cadrée, réponse utile.</span></h1>
     <p class="lead">
-      Le but du formulaire est simple: éviter les allers-retours. Vous remplissez 60 secondes, on comprend, on répond, on avance.
+      Pour toutes demandes, contactez-nous par mail ou téléphone.
     </p>
-    <div class="hero__cta">
-      <a class="btn btn--ghost" href="tel:0300000000">Appeler</a>
-      <a class="btn btn--primary" href="#devis">Demande de devis</a>
-    </div>
   </div>
 </section>
 
@@ -75,24 +67,13 @@
         <strong>Transparence:</strong> déplacement facturé. Diagnostic non facturé. Majorations urgence: si nécessaire (annoncé avant).
       </div>
     </div>
-
-    <aside class="quote reveal">
-      <strong>Urgence ?</strong>
-      <p>Si vous suspectez un danger (odeur de chaud, étincelles, disjonctions répétées), appelez directement.</p>
-      <div class="hr"></div>
-      <a class="btn btn--primary" href="tel:0300000000">Appeler maintenant</a>
-    </aside>
   </div>
 </section>
 
 <section class="section" id="devis">
   <div class="container split">
     <div class="card reveal">
-      <h2 class="h2">Demande de devis (filtrée)</h2>
-      <p class="muted">
-        Ce site est statique (prototype). Le formulaire ne s’envoie pas tout seul.
-        Il génère un résumé clair à copier/coller dans un email ou un outil. Branchez-le ensuite à votre backend.
-      </p>
+      <h2 class="h2">Demande de devis</h2>
       <div class="hr"></div>
 
       <form class="form" data-devis-form>
@@ -109,11 +90,14 @@
             </select>
           </div>
           <div class="field" style="flex:1">
-            <label for="urgence">Urgence</label>
+            <label for="urgence">Budget</label>
             <select id="urgence" name="urgence">
               <option value="">Choisir…</option>
-              <option>Urgent (objectif < 24h)</option>
-              <option>Planifié (selon planning)</option>
+              <option> &lt; 1000€</option>
+              <option>Entre 1000€ et 3000€</option>
+              <option>Entre 3000€ et 5000€</option>
+              <option>Entre 5000€ et 8000€</option>
+              <option>Plus de 8000€</option>
             </select>
           </div>
         </div>
@@ -140,7 +124,7 @@
         <div class="field">
           <label for="details">Détails</label>
           <textarea id="details" name="details" placeholder="Symptôme / contexte, type de bâtiment, âge du tableau, accès, photos possibles…"></textarea>
-          <div class="help">Plus c’est précis, plus la réponse est rapide (et moins vous payez des déplacements inutiles).</div>
+          <div class="help">Expliquer nous le plus précisement possible votre projet.</div>
         </div>
 
         <div class="inline">
@@ -160,35 +144,11 @@
         </div>
 
         <div class="inline">
-          <button class="btn btn--primary" type="button" data-copy-summary>Copier le résumé</button>
-          <a class="btn btn--ghost" href="mailto:contact@tade-electricite.fr?subject=Demande%20devis%20TADE">Ouvrir un email</a>
+          <button class="btn btn--primary" type="button">Envoyer</button>
         </div>
 
-        <div class="field">
-          <label for="summary">Résumé</label>
-          <textarea id="summary" data-devis-summary readonly></textarea>
-          <div class="help">Copiez/collez dans un email ou un CRM. Une version connectée backend l’enverra automatiquement.</div>
-        </div>
       </form>
     </div>
-
-    <aside class="quote reveal">
-      <strong>“À partir de X€” ?</strong>
-      <p class="muted">
-        Bonne idée si vous avez des fourchettes fiables. Mauvaise idée si c’est au doigt mouillé.
-        Option recommandée: démarrer avec des <strong>fourchettes à partir de</strong> sur 2 services max (tableau, IRVE),
-        une fois 10 devis analysés.
-      </p>
-      <div class="hr"></div>
-      <div class="notice">
-        <strong>Pro-tip:</strong> afficher “déplacement facturé” et “diagnostic non facturé” rassure
-        et évite les malentendus. Les clients sérieux aiment les règles claires.
-      </div>
-      <div class="hr"></div>
-      <a class="btn" href="zones.html">Voir les zones</a>
-    </aside>
-  </div>
-</section>
 
   </main>
 
@@ -228,14 +188,9 @@
 
   <div class="container footer__bottom">
     <span>© 2025 TADE – Tous droits réservés.</span>
-    <span class="footer__mini">Site statique (prototype) – à connecter à votre formulaire/email.</span>
   </div>
-
-  <a class="sticky-call" href="tel:0300000000" aria-label="Appeler TADE">
-    <span class="sticky-call__icon" aria-hidden="true">☎</span>
-    <span class="sticky-call__text">Appeler</span>
-  </a>
 </footer>
 
 </body>
 </html>
+
